@@ -1,0 +1,23 @@
+Added:
+- Discord.net 1.0
+- aandachtcheck
+- rolecheck
+- commands:
+    - /info
+    - /changelog
+    - /emote [text]
+    - /aandacht
+    - /help
+    - /timeout [user] [reason] [time]
+    - /startlivestreamcheck
+    - /stoplivestreamcheck
+
+Remove:
+- EVERYTHING RELATED TO DISCORD.NET 0.9.6
+
+Fixed:
+- In commands.json: usage, desciption, permissions, subcommands
+
+Todo:
+- .exe instead .dll
+- Mp4 to mp3
