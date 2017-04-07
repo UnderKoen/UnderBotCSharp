@@ -1,75 +1,75 @@
-{
-    "help": {
-        "usage": "/help",
-        "desc": "returns all commands"
-    },
-    "info": {
-        "usage": "/info",
-        "desc": "returns the current version of the bot"
-    },
-    "changelog": {
-        "usage": "/changelog",
-        "desc": "returns the changelog of this version"
-    },
-    "aandacht": {
-        "usage": "/aandacht",
-        "desc": "returns an line of the AANDACHT script"
-    },
-    "emote": {
-        "usage": "/emote [text]",
-        "desc": "transforms [text] to emote text",
+﻿{
+  "help": {
+    "usage": "/help",
+    "desc": "returns all commands"
+  },
+  "info": {
+    "usage": "/info",
+    "desc": "returns the current version of the bot"
+  },
+  "changelog": {
+    "usage": "/changelog",
+    "desc": "returns the changelog of this version"
+  },
+  "aandacht": {
+    "usage": "/aandacht",
+    "desc": "returns an line of the AANDACHT script"
+  },
+  "emote": {
+    "usage": "/emote [text]",
+    "desc": "transforms [text] to emote text",
+    "perm": "supporter"
+  },
+  "timeout": {
+    "usage": "/timeout [user] [reason] [time]",
+    "desc": "let's [user] don't talk for [time]",
+    "perm": "mod"
+  },
+  "startlivestreamcheck": {
+    "usage": "/startlivestreamcheck",
+    "desc": "starts checking for livestreams",
+    "perm": "mod"
+  },
+  "stoplivestreamcheck": {
+    "usage": "/stoplivestreamcheck",
+    "desc": "stops checking for livestreams",
+    "perm": "mod"
+  },
+  "music": {
+    "usage": "/music [subcommand]",
+    "desc": "without subcommand returns a music help",
+    "subcommands": {
+      "join": {
+        "usage": "/music join",
+        "desc": "let's the bot join the channel where you in",
         "perm": "supporter"
-    },
-    "timeout": {
-        "usage": "/timeout [user] [reason] [time]",
-        "desc": "let's [user] don't talk for [time]",
+      },
+      "leave": {
+        "usage": "/music leave",
+        "desc": "let's the bot leave the channel where it is in",
+        "perm": "supporter"
+      },
+      "play": {
+        "usage": "/music play [VideoUrl]",
+        "desc": "plays [VideoUrl] or queue it"
+      },
+      "playlist": {
+        "usage": "/music playlist [PlaylistUrl] [Amount]",
+        "desc": "adds random [Amount] from the [PlaylistUrl] and plays it"
+      },
+      "next": {
+        "usage": "/music next",
+        "desc": "vote for skipping the current song, when 50% of the people voted it will skip"
+      },
+      "forcenext": {
+        "usage": "/music forcenext",
+        "desc": "instansly skips the current song",
         "perm": "mod"
-    },
-    "startlivestreamcheck": {
-        "usage": "/startlivestreamcheck",
-        "desc": "starts checking for livestreams",
-        "perm": "mod"
-    },
-    "stoplivestreamcheck": {
-        "usage": "/stoplivestreamcheck",
-        "desc": "stops checking for livestreams",
-        "perm": "mod"
-    },
-    "music": {
-        "usage": "/music [subcommand]",
-        "desc": "without subcommand returns a music help",
-        "subcommands": {
-            "join": {
-                "usage": "/music join",
-                "desc": "let's the bot join the channel where you in",
-                "perm": "supporter"
-            },
-            "leave": {
-                "usage": "/music leave",
-                "desc": "let's the bot leave the channel where it is in",
-                "perm": "supporter"
-            },
-            "play": {
-                "usage": "/music play [VideoUrl]",
-                "desc": "plays [VideoUrl] or queue it"
-            },
-            "playlist": {
-                "usage": "/music playlist [PlaylistUrl] [Amount]",
-                "desc": "adds random [Amount] from the [PlaylistUrl] and plays it"
-            },
-            "next": {
-                "usage": "/music next",
-                "desc": "vote for skipping the current song, when 50% of the people voted it will skip"
-            },
-            "forcenext": {
-                "usage": "/music forcenext",
-                "desc": "instansly skips the current song",
-                "perm": "mod"
-            },
-            "queue": {
-                "usage": "/music queue",
-                "desc": "returns the current queue"
-            }
-        }
+      },
+      "queue": {
+        "usage": "/music queue",
+        "desc": "returns the current queue"
+      }
     }
+  }
 }

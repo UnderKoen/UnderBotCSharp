@@ -4,10 +4,10 @@ using UnderBot.Modules;
 
 // Inherit from PreconditionAttribute
 namespace UnderBot.Checks {
-    public class AandachtCheck : PreconditionAttribute {
-        public override async Task<PreconditionResult> CheckPermissions(ICommandContext context,
-            CommandInfo command, IDependencyMap map) {
-            return Public.LastAandacht != context.User ? PreconditionResult.FromSuccess() : PreconditionResult.FromError("");
-        }
-    }
+	public class AandachtCheck : PreconditionAttribute {
+		public override async Task<PreconditionResult> CheckPermissions(ICommandContext context,
+		    CommandInfo command, IDependencyMap map) {
+			return Public.LastAandacht != context.User ? PreconditionResult.FromSuccess() : PreconditionResult.FromError("");
+		}
+	}
 }
