@@ -1,7 +1,5 @@
 {
   "youtube": "test123-abc",
-  "dicord": {
-    "test": "test123-abc",
-    "normal": "test123-abc"
-  }
+  "dicordTest": "test123-abc",
+  "dicord": "test123-abc"
 }
