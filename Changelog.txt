@@ -1,4 +1,4 @@
-Added:
+﻿Added:
 - Discord.net 1.0
 - aandachtcheck
 - rolecheck
@@ -17,7 +17,7 @@ Remove:
 
 Fixed:
 - In commands.json: usage, desciption, permissions, subcommands
+- api keys now in a json file
 
 Todo:
-- .exe instead .dll
 - Mp4 to mp3

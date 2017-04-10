@@ -34,7 +34,7 @@ namespace UnderBot {
 		public void Delete(object o) {
 			if (o.GetType() != typeof(RestUserMessage)) return;
 			System.Threading.Thread.Sleep(5 * 60 * 1000);
-			((RestUserMessage) o).DeleteAsync();
+			((RestUserMessage)o).DeleteAsync();
 		}
 
 		//public void Console() {

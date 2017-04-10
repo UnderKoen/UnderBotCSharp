@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using Discord.Commands;
 using Newtonsoft.Json;
 
 namespace UnderBot.Utils {

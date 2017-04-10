@@ -15,17 +15,14 @@ namespace UnderBot.Utils {
 	public class Youtube {
 		public static string GetTimLivestream() {
 			string html;
-			//tim
-			const string url =
-			    @"https://www.googleapis.com/youtube/v3/search?part=id&channelId=UC8cgXXpepeB2CWfxdy7uGVg&eventType=live&type=video&key=AIzaSyArRyAVT-C7T1d52sjiiPexPNdjyTzt9nU";
-			//andere kut beest
-			//const string url =
-			//@"https://www.googleapis.com/youtube/v3/search?part=id&channelId=UClnQCgFa9lCBL-KXZMOoO9Q&eventType=live&type=video&key=AIzaSyArRyAVT-C7T1d52sjiiPexPNdjyTzt9nU";
 
-			var request = (HttpWebRequest) WebRequest.Create(url);
+			//streamer
+			var url = string.Format("https://www.googleapis.com/youtube/v3/search?part=id&channelId=UC8cgXXpepeB2CWfxdy7uGVg&eventType=live&type=video&key={0}", Keys.GetApiKey(Keys.KeyType.Youtube));
+
+			var request = (HttpWebRequest)WebRequest.Create(url);
 			//request..AutomaticDecompression = DecompressionMethods.GZip;
 
-			var response = (HttpWebResponse) null;
+			var response = (HttpWebResponse)null;
 
 			try {
 				response = request.GetResponseAsync().Result as HttpWebResponse;
