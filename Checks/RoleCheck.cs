@@ -11,19 +11,14 @@ namespace UnderBot.Checks {
 		public override async Task<PreconditionResult> CheckPermissions(ICommandContext context,
 		    CommandInfo command, IDependencyMap map) {
 			await context.Message.DeleteAsync();
-			var fileStream = new FileStream("Commands.json", FileMode.Open);
-			using (var r = new StreamReader(fileStream)) {
-				var json = r.ReadToEnd();
-				var commands = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
-				foreach (var key in commands.Keys) {
-					if (command.Name != key) continue;
-					var perms = JsonConvert.DeserializeObject<Dictionary<string, object>>(commands[key].ToString());
-					if (!perms.ContainsKey("perm")) return PreconditionResult.FromSuccess();
-					var role = Role.StringToRole(perms["perm"].ToString());
-					return Role.GetHighestRole(await Program.GetGuildUser(context)) >= role ? PreconditionResult.FromSuccess() : PreconditionResult.FromError(role.ToString());
-				}
+			Command commandI;
+			if (command.Module.Aliases[0] == "") {
+				commandI = new Command(command.Name);
+			} else {
+				commandI = new Command(command.Module.Aliases[0], command.Name);
 			}
-			return PreconditionResult.FromError("");
+			var role = commandI.Perm;
+			return Role.GetHighestRole(await Program.GetGuildUser(context)) >= role ? PreconditionResult.FromSuccess() : PreconditionResult.FromError(role.ToString());
 		}
 	}
 }

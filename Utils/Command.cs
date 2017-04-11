@@ -52,6 +52,8 @@ namespace UnderBot.Utils {
 						var perms = JsonConvert.DeserializeObject<Dictionary<string, object>>(subcommands[subcommandKey].ToString());
 						if (perms.ContainsKey("perm")) {
 							Perm = Role.StringToRole(perms["perm"].ToString());
+						} else {
+							Perm = Role.Roles.Everyone;
 						}
 						if (perms.ContainsKey("usage")) {
 							Usage = perms["usage"].ToString();

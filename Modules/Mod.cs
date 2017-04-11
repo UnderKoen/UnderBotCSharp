@@ -11,10 +11,9 @@ using Discord.Commands;
 using Timeout = UnderBot.Utils.Timeout;
 
 namespace UnderBot.Modules {
+	[RoleCheck]
 	public partial class Mod : ModuleBase {
 		[Command("timeout")]
-		[Summary("Timeouts a user")]
-		[RoleCheck]
 		public async Task Timeout(string name, string reason, string timeoutLenght) {
 			var lenght = timeoutLenght.ToLower();
 			var daysR = new Regex(@"(\d*)d");
@@ -73,8 +72,6 @@ namespace UnderBot.Modules {
 
 
 		[Command("startlivestreamcheck")]
-		[Summary("start's checking for livestreams")]
-		[RoleCheck]
 		public async Task StartLivestreamCheck() {
 			var threads = new Threads();
 			Threads.LiveThread = new Thread(threads.Live);
@@ -86,8 +83,6 @@ namespace UnderBot.Modules {
 		}
 
 		[Command("stoplivestreamcheck")]
-		[Summary("stop's checking for livestreams")]
-		[RoleCheck]
 		public async Task StopLivestreamCheck() {
 			var threads = new Threads();
 			Threads.LiveThread = new Thread(threads.Live);

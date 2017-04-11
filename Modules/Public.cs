@@ -8,21 +8,18 @@ using UnderBot.Checks;
 using UnderBot.Utils;
 
 namespace UnderBot.Modules {
+	[RoleCheck]
 	public class Public : ModuleBase {
 		[Command("info")]
-		[Summary("Returns the version of the bot")]
-		[RoleCheck]
 		public async Task Info() {
-
-			await new TextMessage().AddMension(Context.User)
-			    .AddText("The current version of the bot is: " + Program.Version)
-			    .AddText("Use /changelog for the more detail")
-			    .SendMessage(Context.Channel);
+			await new TextMessage()
+				.AddMension(Context.User)
+			    	.AddText("The current version of the bot is: " + Program.Version)
+			    	.AddText("Use /changelog for the more detail")
+			    	.SendMessage(Context.Channel);
 		}
 
 		[Command("changelog")]
-		[Summary("Returns the Changelog of the bot")]
-		[RoleCheck]
 		public async Task Changelog() {
 			var fileStream = new FileStream("Changelog.txt", FileMode.Open);
 			using (var reader = new StreamReader(fileStream)) {
@@ -39,9 +36,7 @@ namespace UnderBot.Modules {
 		private static int _aandachtInt = 0;
 		private static List<string> _aandacht;
 
-		[Command("aandacht")]
-		[Summary("Returns a line of andacht script")]
-		[AandachtCheck, RoleCheck]
+		[Command("aandacht"), AandachtCheck]
 		public async Task Aandacht() {
 			if (_aandacht == null) {
 				SetupAandacht();
@@ -66,8 +61,6 @@ namespace UnderBot.Modules {
 		}
 
 		[Command("emote")]
-		[Summary("Returns your text in emotes")]
-		[RoleCheck]
 		public async Task Emote([Remainder] string arg) {
 			var message = "";
 			var emoteMessgae = new TextMessage();
@@ -89,8 +82,6 @@ namespace UnderBot.Modules {
 		}
 
 		[Command("help")]
-		[Summary("Returns all commands")]
-		[RoleCheck]
 		public async Task Help() {
 			var emoteMessage = new TextMessage();
 			var fileStream = new FileStream("Commands.json", FileMode.Open);
